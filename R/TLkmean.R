@@ -16,13 +16,12 @@
 #' @examples
 #' load("TLkmean/data/data.RData")
 #' out=constract_k_mean(dataf=dataf,K=500,iter=5,min_num=8,max_num=15,b=2,c=3,TRUE,0.6)
-#'
-library(igraph)
-library("mvtnorm")
-library(tidyverse)
-library(lpSolve)
-library(dplyr)
 constract_k_mean<-function(dataf,K,iter,min_num,max_num,b=2,c=3,norm=TRUE,d=0.5){
+  library(igraph)
+  library("mvtnorm")
+  library(tidyverse)
+  library(lpSolve)
+  library(dplyr)
   density_fun<-function(dataf,x){
     out_=data.frame()
     for (i in 1:ncol(dataf)){
